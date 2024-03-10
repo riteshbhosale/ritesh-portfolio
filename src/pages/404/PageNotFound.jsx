@@ -1,7 +1,6 @@
-import { Box, Button, Stack } from "@mui/material";
 import React from "react";
+import { Box, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import ThemeToggler from "../../components/theme-toggle/ThemeToggler";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
@@ -9,12 +8,7 @@ const PageNotFound = () => {
     <>
       <Stack spacing={2}>
         <Box>
-          <h1
-            className="bgColor"
-            style={{ textAlign: "center", fontSize: "180px" }}
-          >
-            Oops!
-          </h1>
+          <h1 style={{ textAlign: "center", fontSize: "160px" }}>Oops!</h1>
           <h2 style={{ textAlign: "center", fontSize: "32px" }}>
             404 - Page Not Found
           </h2>
@@ -24,11 +18,7 @@ const PageNotFound = () => {
           </p>
         </Box>
         <Box display={"flex"} justifyContent={"center"}>
-          <Button
-            variant="contained"
-            className="contained"
-            onClick={() => navigate("/")}
-          >
+          <Button variant="contained" onClick={() => navigate("/")}>
             Go To Home
           </Button>
         </Box>

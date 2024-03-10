@@ -1,22 +1,27 @@
 import React from "react";
-import "./Header.css";
 import Logo from "../../components/logo/Logo";
 import ThemeToggler from "../../components/theme-toggle/ThemeToggler";
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
+import NavbarToggler from "../../components/navbar-toggle/NavbarToggler";
 
 const Header = () => {
   return (
-    <Grid container id="header">
-      <Grid item sm={2}>
+    <Grid
+      container
+      id="headerContainer"
+      sx={{ background: (theme) => theme.palette.background.paper }}
+    >
+      <Grid item sm={3} md={2}>
         <Logo />
       </Grid>
-      <Grid item sm={9}>
+      <Grid item sm={1} md={0.5}>
+        <NavbarToggler />
+      </Grid>
+      <Grid item sm={7} md={9}>
         {/* Empty Grid */}
       </Grid>
-      <Grid item sm={1}>
-        <Box display={'flex'} justifyContent={'flex-end'}>
-          <ThemeToggler />
-        </Box>
+      <Grid item sm={1} md={0.5}>
+        <ThemeToggler />
       </Grid>
     </Grid>
   );
