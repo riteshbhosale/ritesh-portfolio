@@ -1,10 +1,10 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Header from "./header/Header";
 import { useSelector } from "react-redux";
+import Navbar from "./navbar";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   const open = useSelector((state) => state?.navbar?.open);
   return (
     <>
@@ -13,12 +13,12 @@ const Layout = () => {
       </Grid>
       <Grid container id="mainContainer">
         {open && (
-          <Grid item sm={2} id="navbarContainer" >
-            Navbar
+          <Grid item sm={2} id="navbarContainer">
+            <Navbar />
           </Grid>
         )}
         <Grid item sm={open ? 10 : 12} id="bodyContainer">
-          <Outlet />
+          {children}
         </Grid>
       </Grid>
     </>

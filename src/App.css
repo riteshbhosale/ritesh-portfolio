@@ -17,6 +17,8 @@ body {
 
 #navbarContainer {
     padding: 20px;
+    height: calc(100vh - 60px);
+    border-right: 1px solid #f0f0f0;
 }
 
 #bodyContainer {
